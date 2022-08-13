@@ -12,8 +12,10 @@ const morgan = require("morgan");
 require("./db/db");
 
 //Routers
-const showsRouter = require("./routes/shows");
 
+const showsRouter = require("./routes/shows");
+const photosRouter = require("./routes/photos");
+const bandmatesRouter = require("./routes/bandmates");
 
 //Middleware
 app.use(express.json())
@@ -27,6 +29,8 @@ app.use(morgan('dev'))
 //Model
 
 app.use("/shows/", showsRouter);
+app.use("/photos/", photosRouter);
+app.use("/bandmates/", bandmatesRouter);
 // app.get("/", (req, res) => {
 //   res.send("Hello Blackeye Coffee!");
 // });
